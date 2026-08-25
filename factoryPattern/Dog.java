@@ -1,4 +1,4 @@
-package factoryPattern;
+
 
 public class Dog implements Pet {
     private String breed;
