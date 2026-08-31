@@ -11,6 +11,7 @@ public class Clinic {
 
         System.out.println("[1] Dog");
         System.out.println("[2] Cat");
+        System.out.println("[3] Exit");
         System.out.print("\nChoose your pet number: ");
         Integer choice = input.nextInt();
 
@@ -30,22 +31,27 @@ public class Clinic {
                 petFile.setPetName("Muning");
                 petFile.setPet(pet);
                 ((Cat) pet).setNoOfLives(9);
+            case 3:
+                System.out.println("[3] Exitting the clinic...");
+
         }
 
-        System.out.println("Pet id is " + petFile.getPetId());
-        System.out.println("Pet name is " + petFile.getPetName());
-        System.out.println("Pet kind: " + petFile.getPet().getClass().getSimpleName());
+        if (petFile.getPet() != null) {
+            System.out.println("Pet id is " + petFile.getPetId());
+            System.out.println("Pet name is " + petFile.getPetName());
+            System.out.println("Pet kind: " + petFile.getPet().getClass().getSimpleName());
 
-        if (petFile.getPet() instanceof Dog) {
-            Dog myDog = (Dog) petFile.getPet();
-            System.out.println("Dog breed: " + myDog.getBreed());
-        } else if (petFile.getPet() instanceof Cat) {
-            Cat myCat = (Cat) petFile.getPet();
-            System.out.println("Cat lives: " + myCat.getNoOfLives());
+            if (petFile.getPet() instanceof Dog) {
+                Dog myDog = (Dog) petFile.getPet();
+                System.out.println("Dog breed: " + myDog.getBreed());
+            } else if (petFile.getPet() instanceof Cat) {
+                Cat myCat = (Cat) petFile.getPet();
+                System.out.println("Cat lives: " + myCat.getNoOfLives());
+            }
+
+            System.out.println("Communication sound: "+ petFile.getPet().makeSound());
+            System.out.println("Play mode: " + petFile.getPet().play());
         }
-
-        System.out.println("Communication sound: "+ petFile.getPet().makeSound());
-        System.out.println("Play mode: " + petFile.getPet().play());
 
     }
 }
