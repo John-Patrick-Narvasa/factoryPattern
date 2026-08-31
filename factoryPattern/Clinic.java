@@ -36,7 +36,6 @@ public class Clinic {
         System.out.println("Pet name is " + petFile.getPetName());
         System.out.println("Pet kind: " + petFile.getPet().getClass().getSimpleName());
 
-        // If Pet is Cat print... If Pet is dog print...
         if (petFile.getPet() instanceof Dog) {
             Dog myDog = (Dog) petFile.getPet();
             System.out.println("Dog breed: " + myDog.getBreed());
